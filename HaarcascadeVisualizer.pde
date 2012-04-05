@@ -5,6 +5,8 @@
  * Author: Adam Harvey / http://ahprojects.com
  * License: Free.99, permissing
  * Tested with Processing 2.0a4
+ * Warning: you need the old XML library
+ * Using XML instead of XMLElement throws errors with getChild()
  ********************************************************************************/
 
 /*********************************************************************************
@@ -163,11 +165,9 @@ void checkForProcess() {
     if (f.exists() && name.length() > 0)
     {
       hasErrors = false;
-      println("set msg");
       statusMsg = "Rendering all stages. This could take several minutes.";
     } 
     else {
-      println("no");
       hasErrors = true;
       doProcess = false;
       statusMsg = "File not found.";
